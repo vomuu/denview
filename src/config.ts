@@ -8,9 +8,9 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "HARUKA-D2333",
-	subtitle: "Blog",
-	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
+	title: "Denview",
+	subtitle: "Denview",
+	lang: "ja", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
 		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
 		fixed: false, // Hide the theme color picker for visitors
@@ -40,22 +40,26 @@ export const siteConfig: SiteConfig = {
 };
 
 export const navBarConfig: NavBarConfig = {
-	links: [
-		LinkPreset.Home,
-		LinkPreset.Archive,
-		LinkPreset.About,
+    links: [
+        LinkPreset.About,   // 1. Home 被替换为 About，并移到第一位
+        LinkPreset.Archive, 
+        {
+            name: "RD",
+            url: "/archive/?category=RD", 
+            external: false,
+        },
 		{
-			name: "GitHub",
-			url: "https://github.com/HARUKA-D2333", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
-		},
-	],
+            name: "RB",
+            url: "/archive/?category=RB", 
+            external: false,
+        },
+    ],
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "HARUKA-D2333",
-	bio: "现在就读于东京电机大学 理工学部 情报系统设计学系",
+	avatar: "assets/images/dever.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	name: "Denview",
+	bio: "The site of dendai",
 	links: [
 		// {
 		// 	name: "Twitter",
@@ -64,16 +68,16 @@ export const profileConfig: ProfileConfig = {
 		// 	// `pnpm add @iconify-json/<icon-set-name>`
 		// 	url: "https://twitter.com",
 		// },
-		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://steamcommunity.com/id/PYX1006637314/",
-		},
-		{
-			name: "GitHub",
-			icon: "fa6-brands:github",
-			url: "https://github.com/HARUKA-D2333",
-		},
+		// {
+		// 	name: "Steam",
+		// 	icon: "fa6-brands:steam",
+		// 	url: "https://steamcommunity.com/id/PYX1006637314/",
+		// },
+		// {
+		// 	name: "GitHub",
+		// 	icon: "fa6-brands:github",
+		// 	url: "https://github.com/HARUKA-D2333",
+		// },
 	],
 };
 
